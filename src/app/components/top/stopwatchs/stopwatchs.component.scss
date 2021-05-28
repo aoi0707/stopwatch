@@ -1,0 +1,84 @@
+.jumbotron-extend {
+  position: relative;
+  height: 100vh;
+  min-height: 300px;
+  background: url("/./assets/page.jpg") no-repeat center center;
+  background-size: cover;
+}
+.jumbotron-container {
+  position: fixed;
+  margin-top: 1%;
+  padding-left: 5px;
+}
+// ボタン
+.btn-black {
+  border-radius: 0;
+  background-color: #000;
+  opacity: 60%;
+  color: #fff;
+  font-family: "Avenir", serif;
+  font-size: 25px;
+  width: 100px;
+}
+.btn-blacks {
+  border-radius: 0;
+  background-color: #000;
+  opacity: 60%;
+  color: #fff;
+  font-family: "Avenir", serif;
+}
+// バックボタン
+#back {
+  margin-left: 1%;
+}
+.btn-black:hover {
+  background-color: #fff;
+  color: #000;
+}
+.btn-blacks:hover {
+  background-color: #fff;
+  color: #000;
+}
+// タイマー表示
+.time {
+  font-size: 10vw;
+  border-color: #ffff;
+  opacity: 40%;
+  color: black;
+  font-family: "Avenir", serif;
+}
+// テーブル
+#table {
+  text-align: center;
+  border-color: #ffff;
+  opacity: 60%;
+  color: black;
+  font-family: "Avenir", serif;
+  font-size: 2vw;
+}
+thead,
+tbody {
+  text-align: center;
+  display: block;
+  margin: auto;
+  padding: auto;
+}
+tbody {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 150px;
+}
+.table-responsive > .table {
+  width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+@media (max-width: 767px) {
+  .table-responsive > .table {
+    table-layout: auto;
+  }
+
+  .inactive {
+    opacity: 0.6;
+  }
+}

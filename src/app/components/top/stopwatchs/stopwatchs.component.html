@@ -1,0 +1,94 @@
+<head>
+  <meta charset="”UTF-8″" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="jumbotron jumbotron-extend">
+    <div class="container-fluid jumbotron-container">
+      <div class="row">
+        <div class="d-flex flex-row">
+          <!-- 前画面へ戻るボタン -->
+          <button
+            id="back"
+            class="btn btn-blacks bd-highlight mb-2"
+            onclick="history.back()"
+          >
+            --Back--
+          </button>
+        </div>
+        <!-- 分・秒・ミリ秒 -->
+        <div class="disp">
+          <div class="display d-flex justify-content-center">
+            <div id="minutes" class="time p-2 bd-highlight">{{ minutes }}:</div>
+            <div id="seconds" class="time p-2 bd-highlight">{{ seconds }}.</div>
+            <span id="milli_seconds" class="time p-2 bd-highlight">{{
+              milli_seconds
+            }}</span>
+          </div>
+        </div>
+
+        <!-- スタート・ストップボタン -->
+        <div class="d-flex justify-content-center mt-3">
+          <div class="bottons">
+            <button
+              class="btn btn-black bd-highlight"
+              id="start"
+              (click)="startStop()"
+              [innerHTML]="starts"
+            >
+              Start
+            </button>
+
+            <!-- リセットボタン -->
+            <button
+              class="btn btn-black bd-highlight"
+              id="reset"
+              (click)="resetTimer()"
+              [disabled]="resetButtons"
+            >
+              Reset
+            </button>
+            <!-- ラップボタン -->
+            <button
+              class="btn btn-black bd-highlight"
+              id="rap"
+              (click)="rapTimer()"
+              [disabled]="rapButtons"
+            >
+              Rap
+            </button>
+          </div>
+        </div>
+
+        <!-- ラップ一覧表示 -->
+
+        <div class="d-flex justify-content-center">
+          <div id="table">
+            <table class="table-responsive mt-5 mx-5">
+              <thead>
+                <tr>
+                  <th style="width: 300px">No.</th>
+                  <th style="width: 300px">RapTime</th>
+                  <th style="width: 300px">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <span>
+                  <tr *ngFor="let data of datas">
+                    <th scope="row" style="width: 300px">{{ data.index }}</th>
+                    <td style="width: 310px">{{ data.time }}</td>
+                    <td style="width: 295px">{{ data.totals }}</td>
+                  </tr>
+                </span>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
